@@ -1,0 +1,142 @@
+title Simple Block Pushing Game
+author Stephen Lavelle
+homepage www.puzzlescript.net
+
+========
+OBJECTS
+========
+
+Background
+white
+00000
+00000
+00000
+00000
+00000
+
+A_1
+black white
+00000
+01100
+01000
+00010
+00000
+
+A_2
+black white
+00000
+00110
+00010
+01000
+00000
+
+A_3
+black white
+00000
+01000
+00010
+00110
+00000
+
+A_4
+black white
+00000
+00010
+01000
+01100
+00000
+
+Player
+black white
+00000
+01110
+01010
+01110
+00000
+
+Omega
+white black
+00000
+00000
+00100
+00000
+00000
+
+W
+black
+00000
+00000
+00000
+00000
+00000
+
+=======
+LEGEND
+=======
+
+. = Background
+z = Omega
+P = Player
+1 = A_1
+2 = A_2
+3 = A_3
+4 = A_4
+
+
+A = A_1 or A_2 or A_3 or A_4
+
+! = Omega and A_1
+@ = Omega and A_2
+# = Omega and A_3
+$ = Omega and A_4
+
+
+=======
+SOUNDS
+=======
+
+================
+COLLISIONLAYERS
+================
+
+Background
+Z
+Player, A_1, A_2, A_3, A_4, W
+
+======
+RULES
+======
+
+[ > player | A ] -> [ > player | > A ]
+
+( mark squares as "wanting to move" )
+
+[ action player | A_1 ] -> [ action player | action A_1 ]
+[ action player | A_2 ] -> [ action player | action A_2 ] 
+[ action player | A_3 ] -> [ action player | action A_3 ]
+[ action player | A_4 ] -> [ action player | action A_4 ]
+
+( rotate squares that want to move )
+
+[ action A_4 ] -> [ A_1 ]
+[ action A_1 ] -> [ A_2 ]
+[ action A_2 ] -> [ A_3 ]
+[ action A_3 ] -> [ A_4 ]
+
+( when pushing a square, push all similar squares )
+
+[ > A_4 ] [ A_4 ] -> [ > A_4 ] [ > A_4 ]
+[ > A_1 ] [ A_1 ] -> [ > A_1 ] [ > A_1 ]
+[ > A_2 ] [ A_2 ] -> [ > A_2 ] [ > A_2 ]
+[ > A_3 ] [ A_3 ] -> [ > A_3 ] [ > A_3 ]
+
+==============
+WINCONDITIONS
+==============
+
+all A on Z
+
+=======
+LEVELS
+=======
+
