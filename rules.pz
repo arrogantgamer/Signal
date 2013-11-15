@@ -1,4 +1,4 @@
-title Variations
+ title Variations
 author arrogant.gamer
 homepage www.arrogantgamer.com
 
@@ -7,15 +7,15 @@ OBJECTS
 ========
 
 Background
-white
-00000
-00000
-00000
-00000
-00000
+white #EEEEEE
+00100
+00100
+11111
+00100
+00100
 
 A_1
-black white
+#222222 white
 00000
 01100
 01000
@@ -23,7 +23,7 @@ black white
 00000
 
 A_2
-black white
+#222222 white
 00000
 00110
 00010
@@ -31,7 +31,7 @@ black white
 00000
 
 A_3
-black white
+#222222 white
 00000
 0.000
 00010
@@ -39,60 +39,116 @@ black white
 00000
 
 A_4
-black white
+#222222 white
 00000
 000.0
 01000
 01100
 00000
 
-Player
-black white
+C_1
+#222222 white
 00000
-01110
+00100
 01010
-01110
 00000
+00000
+
+C_2
+#222222 white
+00000
+00100
+00010
+00100
+00000
+
+C_3
+#222222 white
+00000
+00000
+01010
+00100
+00000
+
+C_4
+#222222 white
+00000
+00100
+01000
+00100
+00000
+
+Player
+white #222222 green
+11111
+10001
+10201
+10001
+11111
 
 B_1
-white #AA0000
-00000
-00000
-00000
-00010
-00000
+white #EEEEEE #AA0000
+00100
+00100
+11111
+00120
+00100
 
 B_2
-white #AA0000
-00000
-00000
-00000
-01000
-00000
+white #EEEEEE #AA0000
+00100
+00100
+11111
+02100
+00100
 
 B_3
-white #AA0000
-00000
-01000
-00000
-00000
-00000
+white #EEEEEE #AA0000
+00100
+02100
+11111
+00100
+00100
 
 B_4
-white #AA0000
+white #EEEEEE #AA0000
+00100
+00120
+11111
+00100
+00100
+
+W
+#222222
 00000
-00010
+00000
 00000
 00000
 00000
 
-W
-black
-00000
-00000
-00000
-00000
-00000
+controller
+white #222222 green
+11111
+10001
+10201
+10001
+11111
+
+dummy
+white #222222 darkgrey
+11111
+10001
+10201
+10001
+11111
+
+mesh
+white #EEEEEE pink
+02102
+20120
+11211
+02102
+20120
 
 =======
 LEGEND
@@ -100,15 +156,24 @@ LEGEND
 
 . = Background
 P = Player
-1 = A_1
-2 = A_2
-3 = A_3
-4 = A_4
+3 = A_1
+1 = A_2
+7 = A_3
+9 = A_4
 
-! = B_1
-@ = B_2
-# = B_3
-$ = B_4
+8 = C_1
+6 = C_2
+2 = C_3
+4 = C_4
+
+d = dummy
+c = controller
+m = mesh
+
+! = B_1 and Background
+@ = B_2 and Background
+# = B_3 and Background
+$ = B_4 and Background
 
 A = A_1 or A_2 or A_3 or A_4
 B = B_1 or B_2 or B_3 or B_4
@@ -122,12 +187,14 @@ COLLISIONLAYERS
 ================
 
 Background
-B_1, B_2, B_3, B_4
-Player, A_1, A_2, A_3, A_4, W
+B_1, B_2, B_3, B_4, mesh
+Player, dummy, controller, A_1, A_2, A_3, A_4, W, C_1, C_2, C_3, C_4
 
 ======
 RULES
 ======
+
+[ > player | mesh ] -> cancel
 
 [ > player | A ] -> [ > player | > A ]
 
@@ -156,8 +223,12 @@ RULES
 WINCONDITIONS
 ==============
 
-all A on B
+all A_1 on B_1
+all A_2 on B_2
+all A_3 on B_3
+all A_4 on B_4
 
 =======
 LEVELS
 =======
+
