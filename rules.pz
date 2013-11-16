@@ -1,7 +1,6 @@
- title Variations
+ title Signal
 author arrogant.gamer
 homepage www.arrogantgamer.com
-debug
 
 ========
 OBJECTS
@@ -135,6 +134,14 @@ white #222222 green
 10001
 11111
 
+doubledrone ( can be remote controlled by drones)
+white #222222 green
+11111
+10001
+10201
+10001
+11111
+
 nullified ( greyed out )
 white #222222 darkgrey
 11111
@@ -179,8 +186,9 @@ p = Player
 d = nullified
 n = neutralized
 c = drone
+x = doubledrone
 
-actor = p or c
+actor = p or c or x
 
 m = mesh
 
@@ -188,6 +196,13 @@ m = mesh
 @ = B_2 and Background
 # = B_3 and Background
 $ = B_4 and Background
+
+( for the reprogramming level )
+
+` = A_1 and B_1
+' = A_2 and B_2
+" = A_3 and B_3
+, = A_1 and B_4
 
 A = A_1 or A_2 or A_3 or A_4
 B = B_1 or B_2 or B_3 or B_4
@@ -202,29 +217,37 @@ COLLISIONLAYERS
 
 Background
 B_1, B_2, B_3, B_4, mesh
-Player, nullified, neutralized, drone, A_1, A_2, A_3, A_4, W, C_1, C_2, C_3, C_4
+Player, nullified, neutralized, drone, doubledrone, A_1, A_2, A_3, A_4, W, C_1, C_2, C_3, C_4
 
 ======
 RULES
 ======
 
-( pushing a C arrow moves a drone )
+( player pushing a C arrow moves a drone )
 
 UP     [ > player | C_1 ] [ drone ] -> [ player | C_1 ] [ > drone ]
 RIGHT  [ > player | C_2 ] [ drone ] -> [ player | C_2 ] [ > drone ]
 DOWN   [ > player | C_3 ] [ drone ] -> [ player | C_3 ] [ > drone ]
 LEFT   [ > player | C_4 ] [ drone ] -> [ player | C_4 ] [ > drone ]
 
+( drone pushing a C arrow moves a doubledrone )
+
+UP     [ > drone | C_1 ] [ doubledrone ] -> [ drone | C_1 ] [ > doubledrone ]
+RIGHT  [ > drone | C_2 ] [ doubledrone ] -> [ drone | C_2 ] [ > doubledrone ]
+DOWN   [ > drone | C_3 ] [ doubledrone ] -> [ drone | C_3 ] [ > doubledrone ]
+LEFT   [ > drone | C_4 ] [ doubledrone ] -> [ drone | C_4 ] [ > doubledrone ]
+
 ( no passing through mesh )
 
 [ > actor | mesh ] -> cancel
 
-( A arrows are pushable )
+( A arrows are pushable, but not when they are against walls )
 
-[ > actor | A ] -> [ > actor | > A ]
+[ > actor | A | no d no w ] -> [ > actor | > A | no d no w ]
 
 ( if player is surrounded, transfer action to drone )
 [ C_4 | action player | C_2 ] [ drone ] -> [ C_4 | player | C_2 ] [ action drone ]
+[ C_4 | action drone | C_2 ] [ doubledrone ] -> [ C_4 | drone | C_2 ] [ action doubledrone ]
 
 ( mark squares as "wanting to rotate" )
 

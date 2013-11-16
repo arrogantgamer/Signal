@@ -1,13 +1,13 @@
 
-( 9 behind the mesh, the wrong blocks; pull, reprogram, push )
-
+( CHRIS: add more of the trapped moving dudes earlier )
+( more of that "whoa, where is me?" feeling )
 
 message [63900.718172] SIGPWR
 
 ( 0 intro )
-dddddddddddddddd
-dndddndddndddddd
-dddnddddddddddnd
+dddddddddddddd8d
+dndddndddnddd4d6
+dddndddddddddd2d
 dd8dddd.d....ddd
 d4p6c......@.ddd
 dd2dd..1.....dnd
@@ -21,22 +21,22 @@ dnddddddddndwdnd
 dd.......dddw.dd
 d.7..#$....dm..d
 d....@!...3.m..d
-d8dc....d...wd8d
-4p6dddddndddw4n6
-d2dddnddddndwd2d
-ddddddddddddwddd
+d8dx....d...wd8d
+4p6dddddndddw4c6
+d2dddn8dddndwd2d
+ddddddd6ddddwddd
 
 message [63900.838929] SIGSYS
 
 ( 2 similar blocks move together )
 dddddddwwddddndd
 dndd...ww...ddnd
-ddd...7....#.ddd
+6dd...7....#.ddd
 ddd...7....#..dn
-ndd8dc.ww.d..8dd
-dd4p6ddwwddd4n6d
-8dd2dddwwnddd2dd
-n6dddddwwddnddnd
+ndd8dx.ww.d..8dd
+dd4p6ddwwddd4c6d
+8dd2dd.wwnddd2dd
+n6ddd..wwddnddnd
 
 message [63900.873838] SIGSTOP
 
@@ -47,125 +47,123 @@ ddd..wd....w.ddd
 dd.7.....#.w.dnd
 nd.........w..dd
 dd.7...#...wd.dd
-dndp.w..d..m..dd
-dddddwdddddwdddn
+8ndp.w..d..m..dd
+d6dddwdddddwdddn
 
 message [63900.939021] SIGILL
 
-( 3.5 trivial rotate puzzle )
+( 4 trivial rotate puzzle )
 
 ddddnddddddndd8d
-dd8dddc..dddd4n6
+dd8dddx..dddd4c6
 d4p6dd.1...ddd2d
 dd2ddd.....ddddd
 ..ddndd..#.dndd.
-.#..dddd..ddddd.
+....dddd..ddddd.
 dd..ddndddddnd..
-ddn..dddndndd..$
+ddn..d8dndndd...
 
 message [63900.999202] SIGBUS
 
-( 4 impossible similar blocks puzzle )
+( 5 impossible similar blocks puzzle )
 ( press 'x' to rotate blocks )
 nddddddddddndd8d
 dd...d..ddddd4p6
 d.7...#.ddndnd2d
 d.#...7.dddddddd
-dddd...cdd...d..
+dddd...xdd...d..
 d8ddddddd.7...#.
-4n6ddnddd.#...7.
-d2ddddddnddd...p
+4c6ddnddd.#...7.
+d2ddddddnddd...p ( <-- cheat TODO: they should both be 'x' )
 
 message [63901.009403] SIGSEGV
 
-( 5 simple rotate puzzle -- pull )
-nddddddddwdddndd
-dd.d3dd..m.dnddn
-ddd..d.@.m..dddd
+( 6 simple rotate puzzle -- pull )
+nddddddddwddd8dd
+dd.d3dd..m.d4d6n
+ddd..d.@.m..d2dd
 nd.......wd..dnd
 ddc.1..#.wdd.ddd
 dndd...ddw..dd8d
-ddddddddnwddd4p6
-dddnnddddwdddd2d
+d4ddddddnwddd4p6
+dd2nnddddwdddd2d
 
 message [63901.029298] SIGSTKFLT
 
-( 5.5 mesh puzzle -- push )
+( 7 mesh puzzle -- push )
 ( introduces mesh )
-
 ddddndddddddwddd
 dnd8dd....ddw..d
-dd4n6d.3...dw..d
+dd4c6d.3...dw..d
 nnd2dd..d.@.m.!d
 nnddndd1...dw..d
-dn8dddd.d.cdw..d
+dn8dddd.d.xdw..d
 d4p6ddddddddwddd
-dn2ddddnddddwddd
+dn2ddddnd8ddwddd
 
 message [63901.283712] SIGINT
 
+( 8 mesh puzzle )
 ( which is more challenging? 6 or 7 )
-( 6 mesh puzzle )
 ( hinting at remote )
-
-dddddnwdddddnddd
+dddddnwdddddnd2d
 d.d.ddwd...dddnd
 d.....md...ddndd
-d.79..m.#$.ddddd
-dd@3..m..!ddd8..
-dd..1dm...dd4n6.
-ddd.pdwd.dddd2..
-dndddnwdddnddddd
+d.79..m.#$.ddddn
+dd@3..m..!ddd8dd
+dd..1dm...dd4p6d
+ddd.cdwd.dddd2dd
+dndddnwdddnddddn
 
 message [63901.328827] SIGCHLD
 
-( 7 partial remote mesh puzzle )
+( 9 partial remote mesh puzzle )
 n8dddddddwddddnn
 4p6....dw.#$.ddd
 d2d.....w....dnd
 6dd.79..m....dd8
-ddd.@3..m...dd4n
+ddd.@3..m...dd4d
 d8d.....w....dn2
-4n6c1...w..!dddd
+4c6x1...w..!dddd
 d2nddddddddddndd
 
 message [63901.337213] SIGTRAP
 
-( 8 full remote puzzle )
+( 10 full remote puzzle )
 ( here you don't decide the 
 orientations of the pieces )
-d...ddddddnddddd
-d...ddp..ddd7.9d
-ndpdnd....d....d
-dndddd..1.d.#$.d
-dd.dnd..@dd.@!.d
-d..dddddddd....d
+dd.d2dddddpddddd
+dd.dddc..d.d7.9d
+ndp8nd....d....d
+dp4p6d..1.d.#$.d
+..d2nd..@dd.@!.d
+ddddddddddd....d
 dp..ddnd3.....1d
-dd..dndddddddddn
+dddddndddddddddn
 
-message [63901.343177] 
+message [63901.343177] SIGLOST
 
-dddddddddddddddd
-d..............d
-d..............d
-d..............d
-d..............d
-d..............d
-d..............d
-dddddddddddddddd
+( 11 behind the mesh, the wrong blocks; pull, reprogram, push )
+dddnddwd.d8nddnd
+dndddnw.p4p6ddp.
+dd..ddwddd2n.ddd
+d.....m...ddpddd
+d.`'..m.....dddn
+d.,".dw..3..dd8d
+dd..ddw!...cd4d6
+dddddnwdddddnd2d
 
-message [63901.343177] SIGKILL
+message [63901.349325] SIGIO
 
-( 8 full remote puzzle with overlap )
-( here different pieces have
- the same orientation, so its
- harder )
-( broken: seems to be impossible )
-dnddp.d.dddddddn
-ddd.ddddd7....7d
-d.....dnd..@#..d
-d...1.ddd..#@..d
-dd....dnd1....1d
-dd!...pd.ddddddd
-dddddpnd.dddpdnd
-d..dddddpddddnd.
+( 12 first drone control level )
+ddndd8dddcddwddn
+dddd4.......m1dd
+dndw....!...wddd
+dd3m...#...6ndnd
+dddw......2ddddd
+dnddddddddddd8dd
+dd@..1x3..!d4p6d
+nddddddddddnd2dn
+
+message [63901.370827] SIGKILL
+
