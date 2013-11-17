@@ -22,7 +22,7 @@ white #222222 red
 10001
 11111
 
-drone ( can be remote controlled )
+pinkdrone ( can be remote controlled )
 white #222222 pink
 11111
 10001
@@ -30,7 +30,7 @@ white #222222 pink
 10001
 11111
 
-doubledrone ( can be remote controlled by drones)
+greendrone ( can be remote controlled by drones)
 white #222222 green
 11111
 10001
@@ -205,18 +205,17 @@ d = C_2 and green
 2 = C_3 and pink
 4 = C_4 and pink
 
-n = nullified
-g = neutralized
-
-p = Player
-c = drone
-x = doubledrone
-
 reddrone = player
-pinkdrone = drone
-greendrone = doubledrone
+drone = reddrone or greendrone
+
+p = reddrone
+c = pinkdrone
+x = greendrone
 
 actor = p or c or x
+
+n = nullified
+g = neutralized
 
 m = mesh
 I = Wall
@@ -247,25 +246,39 @@ COLLISIONLAYERS
 Background
 green, pink
 B_1, B_2, B_3, B_4, mesh
-Player, nullified, neutralized, drone, doubledrone, A_1, A_2, A_3, A_4, Wall, C_1, C_2, C_3, C_4
+player, nullified, neutralized, actor, A_1, A_2, A_3, A_4, Wall, C_1, C_2, C_3, C_4
 
 ======
 RULES
 ======
 
-( pushing a pink arrow moves a pinkdrone )
+( a player might cause a pink drone to move )
 
-UP      [ > actor | 8 ] [ stationary pinkdrone ] -> [ > actor | 8 ] [ > pinkdrone ]
-LEFT    [ > actor | 4 ] [ stationary pinkdrone ] -> [ > actor | 4 ] [ > pinkdrone ]
-DOWN    [ > actor | 2 ] [ stationary pinkdrone ] -> [ > actor | 2 ] [ > pinkdrone ]
-RIGHT   [ > actor | 6 ] [ stationary pinkdrone ] -> [ > actor | 6 ] [ > pinkdrone ]
+UP      [ > player | 8 ] [ stationary pinkdrone ] -> [ > player | 8 ] [ > pinkdrone ] again
+LEFT    [ > player | 4 ] [ stationary pinkdrone ] -> [ > player | 4 ] [ > pinkdrone ] again
+DOWN    [ > player | 2 ] [ stationary pinkdrone ] -> [ > player | 2 ] [ > pinkdrone ] again
+RIGHT   [ > player | 6 ] [ stationary pinkdrone ] -> [ > player | 6 ] [ > pinkdrone ] again
 
-( pushing a green arrow moves a greendrone )
+( a player might cause a pink drone to move )
 
-UP      [ > actor | w ] [ stationary greendrone ] -> [ > actor | w ] [ > greendrone ] again
-LEFT    [ > actor | a ] [ stationary greendrone ] -> [ > actor | a ] [ > greendrone ] again
-DOWN    [ > actor | s ] [ stationary greendrone ] -> [ > actor | s ] [ > greendrone ] again
-RIGHT   [ > actor | d ] [ stationary greendrone ] -> [ > actor | d ] [ > greendrone ] again
+UP      [ > player | w ] [ stationary greendrone ] -> [ > player | w ] [ > greendrone ] again
+LEFT    [ > player | a ] [ stationary greendrone ] -> [ > player | a ] [ > greendrone ] again
+DOWN    [ > player | s ] [ stationary greendrone ] -> [ > player | s ] [ > greendrone ] again
+RIGHT   [ > player | d ] [ stationary greendrone ] -> [ > player | d ] [ > greendrone ] again
+
+( a pinkdrone might cause a green drone to move )
+
+UP      [ > pinkdrone | w ] [ stationary greendrone ] -> [ > pinkdrone | w ] [ > greendrone ] again
+LEFT    [ > pinkdrone | a ] [ stationary greendrone ] -> [ > pinkdrone | a ] [ > greendrone ] again
+DOWN    [ > pinkdrone | s ] [ stationary greendrone ] -> [ > pinkdrone | s ] [ > greendrone ] again
+RIGHT   [ > pinkdrone | d ] [ stationary greendrone ] -> [ > pinkdrone | d ] [ > greendrone ] again
+
+( a greendrone might cause a pink drone to move )
+
+UP      [ > greendrone | 8 ] [ stationary pinkdrone ] -> [ > greendrone | 8 ] [ > pinkdrone ] again
+LEFT    [ > greendrone | 4 ] [ stationary pinkdrone ] -> [ > greendrone | 4 ] [ > pinkdrone ] again
+DOWN    [ > greendrone | 2 ] [ stationary pinkdrone ] -> [ > greendrone | 2 ] [ > pinkdrone ] again
+RIGHT   [ > greendrone | 6 ] [ stationary pinkdrone ] -> [ > greendrone | 6 ] [ > pinkdrone ] again
 
 ( no passing through mesh )
 
@@ -276,8 +289,7 @@ RIGHT   [ > actor | d ] [ stationary greendrone ] -> [ > actor | d ] [ > greendr
 [ > actor | R | no n no I ] -> [ > actor | > R | no n no I ]
 
 ( if player is surrounded, transfer action to drone )
-[ C_4 | action player | C_2 ] [ drone ] -> [ C_4 | player | C_2 ] [ action drone ]
-[ C_4 | action drone | C_2 ] [ doubledrone ] -> [ C_4 | drone | C_2 ] [ action doubledrone ]
+[ C_4 | action actor | C_2 ] [ actor ] -> [ C_4 | action actor | C_2 ] [ action actor ] again
 
 ( mark squares as "wanting to rotate" )
 
@@ -312,3 +324,4 @@ all A_4 on B_4
 =======
 LEVELS
 =======
+
