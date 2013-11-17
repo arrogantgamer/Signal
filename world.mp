@@ -5,13 +5,13 @@
 message [63900.718172] SIGPIR
 
 ( 0 igtro )
-nnnnnnnnnnnnnn8n
-ngnnngnnngnnn4n6
-nnngnnnnnnnnnn2n
+nnnnnnnnnnnnnnwn
+ngnnncnnngnnnacd
+nnngnnnnnnnnnnsn
 nn8nnnn.n....nnn
-n4p6c......@.nnn
-nn2nn..1.....ngn
-gnnn....nn..ngnn
+n4p6x......@.nnn
+nn2nn..1.....ncn
+cnnn....nn..ngnn
 nnnnnnnnnnnnnnnn
 
 message [63900.719299] SIGURG
@@ -21,9 +21,9 @@ ngnnnnnnnngnIngn
 nn.......nnnI.nn
 n.7..#$....nm..n
 n....@!...3.m..n
-n8nx....n...In8n
-4p6nnnnngnnnI4c6
-n2nnng8nnngnIn2n
+nwnx....n...In8n
+apdnnnnngnnnI4n6
+nsnnng8nnngnIn2n
 nnnnnnn6nnnnInnn
 
 message [63900.838929] SIGSYS
@@ -33,31 +33,31 @@ nnnnnnnIInnnngnn
 ngnn...II...nngn
 6nn...7....#.nnn
 nnn...7....#..ng
-gnn8nx.II.n..8nn
-nn4p6nnIInnn4c6n
-8nn2nn.IIgnnn2nn
+gnn8nx.II.n..wnn
+nn4p6nnIInnnacdn
+8nn2nn.IIgnnnsnn
 g6nnn..IInngnngn
 
 message [63900.873838] SIGSTOP
 
 ( 3 trivial similar blocks puzzle )
-nngnnInngnnIngnn
-gnnnnInnnnnInngn
-nnn..In....I.nnn
+nwgnnInngnnIngnn
+apdnnInnnnnInngn
+nsn..In....I.nnn
 nn.7.....#.I.ngn
 gn.........I..nn
 nn.7...#...In.nn
-8gnp.I..n..m..nn
+8gnx.I..n..m..nn
 n6nnnInnnnnInnng
 
 message [63900.939021] SIGILL
 
 ( 4 trivial rotate puzzle )
 
-nnnngnnnnnngnn8n
-nn8nnnx..nnnn4c6
-n4p6nn.1...nnn2n
-nn2nnn.....nnnnn
+nnnngnnnnnngnnwn
+nnwnnnx..nnnnand
+napdnn.1...nnnsn
+nnsnnn.....nnnnn
 ..nngnn..#.ngnn.
 ....nnnn..nnnnn.
 nn..nngnnnnngn..
@@ -72,30 +72,30 @@ nn...n..nnnnn4p6
 n.7...#.nngngn2n
 n.#...7.nnnnnnnn
 nnnn...xnn...n..
-n8nnnnnnn.7...#.
-4c6nngnnn.#...7.
-n2nnnnnngnnn...p ( <-- cheat TOnO: they shouln both be 'x' )
+nwnnnnnnn.7...#.
+acdnngnnn.#...7.
+nsnnnnnngnnn...p ( <-- cheat TOnO: they shouln both be 'x' )
 
 message [63901.009403] SIGSEGV
 
 ( 6 simple rotate puzzle -- pull )
-gnnnnnnnnInnn8nn
-nn.n3nn..m.n4n6g
-nnn..n.@.m..n2nn
+gnnnnnnnnInnnwnn
+nn.n3nn..m.nacdg
+nnn..n.@.m..nsnn
 gn.......In..ngn
-nnc.1..#.Inn.nnn
+nnx.1..#.Inn.nnn
 ngnn...nnI..nn8n
-n4nnnnnngInnn4p6
-nn2ggnnnnInnnn2n
+nagnnnnngInnn4p6
+nnsggnnnnInnnn2n
 
 message [63901.029298] SIGSTKFLT
 
 ( 7 mesh puzzle -- push )
 ( igtronuces mesh )
 nnnngnnnnnnnInnn
-ngn8nn....nnI..n
-nn4c6n.3...nI..n
-ggn2nn..n.@.m.!n
+ngnwnn....nnI..n
+nnacdn.3...nI..n
+ggnsnn..n.@.m.!n
 ggnngnn1...nI..n
 ng8nnnn.n.xnI..n
 n4p6nnnnnnnnInnn
@@ -110,9 +110,9 @@ nnnnngInnnnngn2n
 n.n.nnIn...nnngn
 n.....mn...nngnn
 n.79..m.#$.nnnng
-nn@3..m..!nnn8nn
-nn..1nm...nn4p6n
-nnn.cnIn.nnnn2nn
+nn@3..m..!nnnwnn
+nn..1nm...nnapdn
+nnn.xnIn.nnnnsnn
 ngnnngInnngnnnng
 
 message [63901.328827] SIGCHLn
@@ -123,9 +123,9 @@ g8nnnnnnnInnnngg
 n2n.....I....ngn
 6nn.79..m....nn8
 nnn.@3..m...nn4n
-n8n.....I....ng2
-4c6x1...I..!nnnn
-n2gnnnnnnnnnngnn
+nwn.....I....ng2
+acdx1...I..!nnnn
+nsgnnnnnnnnnngnn
 
 message [63901.337213] SIGTRAP
 
@@ -133,10 +133,10 @@ message [63901.337213] SIGTRAP
 ( here you nog't necine the 
 oriegtatiogs of the pieces )
 nn.n2nnnnnpnnnnn
-nn.nnnc..n.n7.9n
-gnp8gn....n....n
-np4p6n..1.n.#$.n
-..n2gn..@nn.@!.n
+nn.nnnx..n.n7.9n
+gnpwgn....n....n
+npapdn..1.n.#$.n
+..nsgn..@nn.@!.n
 nnnnnnnnnnn....n
 np..nngn3.....1n
 nnnnngnnnnnnnnng
@@ -144,26 +144,26 @@ nnnnngnnnnnnnnng
 message [63901.343177] SIGLOST
 
 ( 11 behign the mesh, the Irogg blocks; pull, reprogram, push )
-nnngnnIn.n8gnngn
-ngnnngI.p4p6nnp.
-nn..nnInnn2g.nnn
+nnngnnIn.nwgnngn
+ngnnngI.papdnnp.
+nn..nnInnnsg.nnn
 n.....m...nnpnnn
 n.`'..m.....nnng
 n.,".nI..3..nn8n
-nn..nnI!...cn4n6
+nn..nnI!...xn4n6
 nnnnngInnnnngn2n
 
 message [63901.349325] SIGIO
 
 ( 12 first nroge cogtrol level )
-nngnn8nnncnnInng
+nngnn8nnnxnnInng
 nnnn4.......m1nn
 ngnI....!...Innn
 nn3m...#...6gngn
 nnnI......2nnnnn
-ngnnnnnnnnnnn8nn
-nn@..1x3..!n4p6n
-gnnnnnnnnnngn2ng
+ngnnnnnnnnnnnwnn
+nn@..1c3..!napdn
+gnnnnnnnnnngnsng
 
 message [63901.370827] SIGKILL
 
