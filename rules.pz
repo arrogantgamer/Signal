@@ -134,18 +134,8 @@ white #EEEEEE #AA0000
 00100
 00100
 
-
-
-nullified ( greyed out )
+nullified
 white #222222 darkgrey
-11111
-10001
-10201
-10001
-11111
-
-neutralized ( trapped by neighbour cells TODO )
-white #222222 green
 11111
 10001
 10201
@@ -215,7 +205,6 @@ x = greendrone
 actor = p or c or x
 
 n = nullified
-g = neutralized
 
 m = mesh
 I = Wall
@@ -235,6 +224,9 @@ $ = B_4 and Background
 R = A_1 or A_2 or A_3 or A_4
 B = B_1 or B_2 or B_3 or B_4
 
+G = green
+K = pink
+
 =======
 SOUNDS
 =======
@@ -246,67 +238,61 @@ COLLISIONLAYERS
 Background
 green, pink
 B_1, B_2, B_3, B_4, mesh
-player, nullified, neutralized, actor, A_1, A_2, A_3, A_4, Wall, C_1, C_2, C_3, C_4
+player, nullified, actor, A_1, A_2, A_3, A_4, Wall, C_1, C_2, C_3, C_4
 
 ======
 RULES
 ======
 
 ( a player might cause a pink drone to move )
-
-UP      [ > player | 8 ] [ stationary pinkdrone ] -> [ > player | 8 ] [ > pinkdrone ] again
-LEFT    [ > player | 4 ] [ stationary pinkdrone ] -> [ > player | 4 ] [ > pinkdrone ] again
-DOWN    [ > player | 2 ] [ stationary pinkdrone ] -> [ > player | 2 ] [ > pinkdrone ] again
-RIGHT   [ > player | 6 ] [ stationary pinkdrone ] -> [ > player | 6 ] [ > pinkdrone ] again
+[ > player | 8 ] [ stationary pinkdrone ] -> [ > player | 8 ] [ UP    pinkdrone ] again
+[ > player | 4 ] [ stationary pinkdrone ] -> [ > player | 4 ] [ LEFT  pinkdrone ] again
+[ > player | 2 ] [ stationary pinkdrone ] -> [ > player | 2 ] [ DOWN  pinkdrone ] again
+[ > player | 6 ] [ stationary pinkdrone ] -> [ > player | 6 ] [ RIGHT pinkdrone ] again
 
 ( a player might cause a pink drone to move )
-
-UP      [ > player | w ] [ stationary greendrone ] -> [ > player | w ] [ > greendrone ] again
-LEFT    [ > player | a ] [ stationary greendrone ] -> [ > player | a ] [ > greendrone ] again
-DOWN    [ > player | s ] [ stationary greendrone ] -> [ > player | s ] [ > greendrone ] again
-RIGHT   [ > player | d ] [ stationary greendrone ] -> [ > player | d ] [ > greendrone ] again
+[ > player | w ] [ stationary greendrone ] -> [ > player | w ] [ UP    greendrone ] again
+[ > player | a ] [ stationary greendrone ] -> [ > player | a ] [ LEFT  greendrone ] again
+[ > player | s ] [ stationary greendrone ] -> [ > player | s ] [ DOWN  greendrone ] again
+[ > player | d ] [ stationary greendrone ] -> [ > player | d ] [ RIGHT greendrone ] again
 
 ( a pinkdrone might cause a green drone to move )
-
-UP      [ > pinkdrone | w ] [ stationary greendrone ] -> [ > pinkdrone | w ] [ > greendrone ] again
-LEFT    [ > pinkdrone | a ] [ stationary greendrone ] -> [ > pinkdrone | a ] [ > greendrone ] again
-DOWN    [ > pinkdrone | s ] [ stationary greendrone ] -> [ > pinkdrone | s ] [ > greendrone ] again
-RIGHT   [ > pinkdrone | d ] [ stationary greendrone ] -> [ > pinkdrone | d ] [ > greendrone ] again
+[ > pinkdrone | w ] [ stationary greendrone ] -> [ > pinkdrone | w ] [ UP    greendrone ] again
+[ > pinkdrone | a ] [ stationary greendrone ] -> [ > pinkdrone | a ] [ LEFT  greendrone ] again
+[ > pinkdrone | s ] [ stationary greendrone ] -> [ > pinkdrone | s ] [ DOWN  greendrone ] again
+[ > pinkdrone | d ] [ stationary greendrone ] -> [ > pinkdrone | d ] [ RIGHT greendrone ] again
 
 ( a greendrone might cause a pink drone to move )
-
-UP      [ > greendrone | 8 ] [ stationary pinkdrone ] -> [ > greendrone | 8 ] [ > pinkdrone ] again
-LEFT    [ > greendrone | 4 ] [ stationary pinkdrone ] -> [ > greendrone | 4 ] [ > pinkdrone ] again
-DOWN    [ > greendrone | 2 ] [ stationary pinkdrone ] -> [ > greendrone | 2 ] [ > pinkdrone ] again
-RIGHT   [ > greendrone | 6 ] [ stationary pinkdrone ] -> [ > greendrone | 6 ] [ > pinkdrone ] again
+[ > greendrone | 8 ] [ stationary pinkdrone ] -> [ > greendrone | 8 ] [ UP    pinkdrone ] again
+[ > greendrone | 4 ] [ stationary pinkdrone ] -> [ > greendrone | 4 ] [ LEFT  pinkdrone ] again
+[ > greendrone | 2 ] [ stationary pinkdrone ] -> [ > greendrone | 2 ] [ DOWN  pinkdrone ] again
+[ > greendrone | 6 ] [ stationary pinkdrone ] -> [ > greendrone | 6 ] [ RIGHT pinkdrone ] again
 
 ( no passing through mesh )
+[ > actor | mesh ] -> [ actor | mesh ]
 
-[ > actor | mesh ] -> cancel
-
-( A arrows are pushable, but not when they are against walls )
-
+( R arrows are pushable, but not when they are against walls )
 [ > actor | R | no n no I ] -> [ > actor | > R | no n no I ]
 
-( if player is surrounded, transfer action to drone )
-[ C_4 | action actor | C_2 ] [ actor ] -> [ C_4 | action actor | C_2 ] [ action actor ] again
+( actions transfer through arrow blocks to remote actors )
+[ action player | G ] [ greendrone  ] -> [ action player | G ] [ action greendrone ] again
+[ action player | K ] [ pinkdrone  ] -> [ action player | K ] [ action pinkdrone ] again
+[ action pinkdrone | G ] [ greendrone ] -> [ action pinkdrone | G ] [ action greendrone ] again
+[ action greendrone | K ] [ pinkdrone  ] -> [ action greendrone | K ] [ action pinkdrone ] again
 
 ( mark squares as "wanting to rotate" )
-
 [ action actor | A_1 ] -> [ action actor | action A_1 ]
 [ action actor | A_2 ] -> [ action actor | action A_2 ] 
 [ action actor | A_3 ] -> [ action actor | action A_3 ]
 [ action actor | A_4 ] -> [ action actor | action A_4 ]
 
 ( rotate squares that want to rotate )
-
 [ action A_4 ] -> [ A_1 ]
 [ action A_1 ] -> [ A_2 ]
 [ action A_2 ] -> [ A_3 ]
 [ action A_3 ] -> [ A_4 ]
 
 ( when pushing a square, push all similar squares )
-
 [ > A_4 ] [ A_4 ] -> [ > A_4 ] [ > A_4 ]
 [ > A_1 ] [ A_1 ] -> [ > A_1 ] [ > A_1 ]
 [ > A_2 ] [ A_2 ] -> [ > A_2 ] [ > A_2 ]
