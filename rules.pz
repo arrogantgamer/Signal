@@ -14,6 +14,30 @@ white #EEEEEE
 00100
 00100
 
+Player
+white #222222 red
+11111
+10001
+10201
+10001
+11111
+
+drone ( can be remote controlled )
+white #222222 pink
+11111
+10001
+10201
+10001
+11111
+
+doubledrone ( can be remote controlled by drones)
+white #222222 green
+11111
+10001
+10201
+10001
+11111
+
 A_1
 #222222 white
 00000
@@ -49,42 +73,34 @@ A_4
 C_1
 #222222 white
 00000
-00100
-01010
+00.00
 00000
+01010
 00000
 
 C_2
 #222222 white
 00000
-00100
-00010
-00100
+01000
+000.0
+01000
 00000
 
 C_3
 #222222 white
 00000
-00000
 01010
-00100
+00000
+00.00
 00000
 
 C_4
 #222222 white
 00000
-00100
-01000
-00100
+00010
+0.000
+00010
 00000
-
-Player
-white #222222 green
-11111
-10001
-10201
-10001
-11111
 
 B_1
 white #EEEEEE #AA0000
@@ -118,29 +134,7 @@ white #EEEEEE #AA0000
 00100
 00100
 
-W
-#222222
-00000
-00000
-00000
-00000
-00000
 
-drone ( can be remote controlled )
-white #222222 green
-11111
-10001
-10201
-10001
-11111
-
-doubledrone ( can be remote controlled by drones)
-white #222222 green
-11111
-10001
-10201
-10001
-11111
 
 nullified ( greyed out )
 white #222222 darkgrey
@@ -158,6 +152,14 @@ white #222222 green
 10001
 11111
 
+Wall
+#222222
+00000
+00000
+00000
+00000
+00000
+
 mesh
 white #EEEEEE pink
 02102
@@ -165,6 +167,22 @@ white #EEEEEE pink
 11211
 02102
 20120
+
+green
+green
+00000
+00000
+00000
+00000
+00000
+
+pink
+pink
+00000
+00000
+00000
+00000
+00000
 
 =======
 LEGEND
@@ -177,20 +195,27 @@ LEGEND
 7 = A_3
 9 = A_4
 
-8 = C_1
-6 = C_2
-2 = C_3
-4 = C_4
+w = C_1 and green
+a = C_4 and green
+s = C_3 and green
+d = C_2 and green
+
+8 = C_1 and pink
+6 = C_2 and pink
+2 = C_3 and pink
+4 = C_4 and pink
+
+n = nullified
+g = neutralized
 
 p = Player
-d = nullified
-n = neutralized
 c = drone
 x = doubledrone
 
 actor = p or c or x
 
 m = mesh
+I = Wall
 
 ! = B_1 and Background
 @ = B_2 and Background
@@ -216,8 +241,9 @@ COLLISIONLAYERS
 ================
 
 Background
+green, pink
 B_1, B_2, B_3, B_4, mesh
-Player, nullified, neutralized, drone, doubledrone, A_1, A_2, A_3, A_4, W, C_1, C_2, C_3, C_4
+Player, nullified, neutralized, drone, doubledrone, A_1, A_2, A_3, A_4, Wall, C_1, C_2, C_3, C_4
 
 ======
 RULES
@@ -243,7 +269,7 @@ LEFT   [ > drone | C_4 ] [ doubledrone ] -> [ drone | C_4 ] [ > doubledrone ]
 
 ( A arrows are pushable, but not when they are against walls )
 
-[ > actor | A | no d no w ] -> [ > actor | > A | no d no w ]
+[ > actor | A | no n no I ] -> [ > actor | > A | no n no I ]
 
 ( if player is surrounded, transfer action to drone )
 [ C_4 | action player | C_2 ] [ drone ] -> [ C_4 | player | C_2 ] [ action drone ]
@@ -282,4 +308,3 @@ all A_4 on B_4
 =======
 LEVELS
 =======
-
