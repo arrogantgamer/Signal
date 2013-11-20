@@ -272,7 +272,7 @@ RULES
 [ > actor | mesh ] -> [ actor | mesh ]
 
 ( R arrows are pushable, but not when they are against walls )
-[ > actor | R | no n no I ] -> [ > actor | > R | no n no I ]
+[ > actor | R | no n no I no R ] -> [ > actor | > R | no n no I no R ]
 
 ( actions transfer through arrow blocks to remote actors )
 [ action player | G ] [ greendrone  ] -> [ action player | G ] [ action greendrone ] again

@@ -1,6 +1,132 @@
 ( CHRIS: add more of the trapped moving dudes earlier )
 ( more of that "Ihoa, Ihere is me?" feeling )
 
+((07:12:40 PM) Erik Madsen: but I think having an unmovable dude sitting right beside a spot where you have to remotely move a block to is a good idea
+(07:12:51 PM) Erik Madsen: makes it so there's another layer of planning on top of "move this block here and then forget about it"
+(07:12:58 PM) Erik Madsen: it just has to be possible to win haha )
+
+
+
+
+message [63901.029298] SIGSTKFLT
+
+( 7 mesh puzzle -- push )
+( introduces complex puzzles )
+nnwncnnnnnncInnn
+ndcnnn....nnI..n
+.nncan.3...nI..n
+.xnsnn..n.@.m.!n
+ncnnxnn1...nI..n
+nn8nnxn.n.xnI..n
+n6p4n.nnnnnnInnn
+nn2nn.ncn8nxIc..
+
+message [63901.349325] SIGIO
+
+( introduces controls )
+c.nc8nnnnxnnInn.
+n.n4........m1nc
+nnnI....!...Innn
+.n3m...#....6nxc
+xxnI......n2nn..
+ncnnnnnnnnnnnwnn
+nn@..1c3..!napdn
+cnnnnnnnnnncnsnx
+
+message [63901.337213] SIGTRAP
+( no direct rotation )
+( player issolated )
+
+nn.n2nnnnnxnnnnc
+cn.nnnn..n.n7.9n
+xnxwnx....n....n
+ncapdn..1.n.#$.n
+..xsnnn.@nn.@!.n
+nnnncnnnnnn....n
+nx..nnxn3.....1n
+nnnncxnnnnnnnnnc
+
+message [63901.343177] SIGLOST
+( pull a block out for a drone to reprogram )
+( perfect sequel to SIGTRAP )
+( player issolated + drone control )
+
+n..xnnIn.nwncn8n
+cnnncxI.xapdn4.6
+nn9.nnInnnsnnn.n
+n7....m...nn...n
+n.!@..m...n.@..n
+n3$#.nInncn..1.n
+nn9.ncInnnnnx.nn
+xnnnxcIn..xnnnxx
+
+message [00000.000000]
+( player plays no role )
+( drone control only )
+
+nnnnnnnncnnwncnn
+n3c3!.!n.napdn@n
+nnnnnnnn.nnsnn.n
+n31....nnxn8nn@n
+n97......n4x6n1n
+n.......#$n2nncn
+cnn.....@!nnnn1n
+x..nnnnnnn...xnn
+
+message [00000.000000]
+( interference remote dude )
+( takes a _long_ time and uses both remote and jama )
+
+cnnnnInnn.x.nnnx
+n....I..nncn.ncn
+n.79.m.#.nnn.9.n
+n.13.m.@!nn....n
+n....I..nnxnn$nn
+n$nxnInnnsncnn6n
+xnnnnInndcwnn2p4
+n..xnIc.nanncn8n
+
+message [63901.283712] SIGINT
+( plain remote puzzle )
+( this needs messed up controls )
+( begin messing with controls )
+
+nncnnxInnnnnxn2n
+n.n.nnIn...nnc..
+n.....mn...n.xnn
+n.79..m.#$.n.nnc
+nn@3..m..!nnnwnn
+xn..1nm...nnapdn
+n.n.xnIc.nnnnsnn
+.xcnnxInncx..nnx
+
+message [63901.328827] SIGCHLD
+( further mess with controls )
+
+nwnnnnncnInnnnxc
+apdnn..nI.#$.nnn
+nsnn....I....nx.
+6nn.7.9.m....cnn
+nnn.@3..m...nn4n
+x8n.....I....nn2
+4nx.1..nI..!nnxn
+n2nnnnnnnnnnnc.. ( TODO test the pink dude )
+
+message [00000.000000]
+( mess with red's controls )
+
+message [00000.000000]
+( gradually freeing red, trapping green )
+
+message [00000.000000]
+( red is the player now! )
+
+message [00000.000000]
+( zoom out to expose red control blocks? )
+
+message [63901.370827] SIGKILL
+
+
 message [63900.718172] SIGPIR
 
 ( 0 igtro )
@@ -18,27 +144,14 @@ message [63900.719299] SIGURG
 ( 1 blocks go og correspognigg nots )
 ncnnnnnnnn.xInxn
 nn.......nnnI.nn
-n.7..#$....nm..n
-n....@!...3.m.xn
+n.7..#.....nm..n
+n.....!...3.m.xn
 nwn.....n...In8n
 apdnxnnnxnnnI4n6
 nsncnn8nnxcnIn2n
 nnx..nn6n.nnInnn
 
-message [63900.751983]
-
-( a similar level, demonstrating that blocks of the same symbol move together )
-................
-................
-...7....$.......
-.......@....3...
-nnnnnnnnnnnnnnnn
-...7....$.......
-.......@....3...
-................
-
-
-message [63900.838929] SIGSYS
+message [63900.751983] SIGSYS
 
 ( 2 similar blocks move together )
 n.nxnnnIInnnnx.n
@@ -49,6 +162,18 @@ nnx...7....#..nx
 nn4p6nnIInnnacdn
 8nn2nnnIInxnnsnn
 n6nnn.xIIc..nnxn
+
+message [63900.838929] SIGALRM
+
+( a similar level, demonstrating that blocks of the same symbol move together )
+..cnnnnnnnnxnnwn
+nnn.......nnnacd
+cnx..7..#...nnsn
+n8nn...!..3.ncnn
+4p6nnnnnnnnnnnnx
+n2nn.7..#....n.n
+nnn....!..3.nn.n
+ncnnnnnnnnnncnxn
 
 message [63900.873838] SIGSTOP
 
@@ -85,8 +210,8 @@ n.7...#.nnnxnn2n
 n.#...7.nxn.ncnn
 nnnnx...nnnnnncn
 nwnnnnnnnnn....n
-acdncnnx..n...nn
-nsnnnnnnnnnnnnnn
+acdnc.nx..n...nn
+nsnn.nnnnnnnnnnn
 
 message [63901.009403] SIGSEGV
 
@@ -100,82 +225,3 @@ cnnn...nnI..nn8n
 nacnnnnncInxn4p6
 nnsnnc..nInnnn2n
 
-
-message [63901.029298] SIGSTKFLT
-
-( 7 mesh puzzle -- push )
-( igtronuces mesh )
-nnwncnnnnnncInnn
-ndcnnn....nnI..n
-.nncan.3...nI..n
-.xnsnn..n.@.m.!n
-ncnnxnn1...nI..n
-nn8nnxn.n.xnI..n
-n6p4n.nnnnnnInnn
-nn2nn.ncn8nxIc..
-
-message [63901.349325] SIGIO
-
-( 12 first nroge cogtrol level )
-c.nc8nnnnxnnInn.
-n.n4........m1nc
-nnnI....!...Innn
-.n3m...#....6nxc
-xxnI......n2nn..
-ncnnnnnnnnnnnwnn
-nn@..1c3..!napdn
-cnnnnnnnnnncnsnx
-
-message [63901.283712] SIGINT
-
-( 8 mesh puzzle )
-( Ihich is more challeggigg? 6 or 7 )
-( higtigg at remote )
-nncnnxInnnnnxn2n
-n.n.nnIn...nnc..
-n.....mn...n.xnn
-n.79..m.#$.n.nnc
-nn@3..m..!nnnwnn
-xn..1nm...nnapdn
-n.n.xnIc.nnnnsnn
-.xcnnxInncx..nnx
-
-message [63901.328827] SIGCHLD
-
-( 9 partial remote mesh puzzle )
-nwnnnnncnInnnnxc
-apdnn..nI.#$.nnn
-nsnn....I....nx.
-6nn.79..m....cnn
-nnn.@3..m...nn4n
-x8n.....I....nn2
-4nx.1..nI..!nnxn
-n2nnnnnnnnnnnc..
-
-message [63901.337213] SIGTRAP
-
-( 10 full remote puzzle )
-( here you nog't necine the 
-oriegtatiogs of the pieces )
-nn.n2nnnnnxnnnnc
-cn.nnnn..n.n7.9n
-xnxwnx....n....n
-ncapdn..1.n.#$.n
-..xsnnn.@nn.@!.n
-nnnncnnnnnn....n
-nx..nnxn3.....1n
-nnnncxnnnnnnnnnc
-
-message [63901.343177] SIGLOST
-
-( 11 behign the mesh, the Irogg blocks; pull, reprogram, push )
-nnnxcnIn.nwnnnnn
-ncnnnxI.xapdnnx.
-nn..nnInnnsn.nnn
-n.....m...nnxncn
-n.`'..m.....nnnx
-n.,".nI..3..nn8n
-nn..ncI!...xn4n6
-nnnnncInnnnncn2n
-
-message [63901.370827] SIGKILL
