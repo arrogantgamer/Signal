@@ -1,7 +1,8 @@
  title Signal
 author arrogant.gamer
 homepage www.arrogantgamer.com
-debug
+
+flickscreen 16 x 8
 ========
 OBJECTS
 ========
@@ -32,6 +33,22 @@ white #222222 pink
 
 greendrone ( can be remote controlled by drones)
 white #222222 green
+11111
+10001
+10201
+10001
+11111
+
+orangedrone ( for the ending )
+white #222222 orange
+11111
+10001
+10201
+10001
+11111
+
+dummy ( for the ending )
+white #222222 red
 11111
 10001
 10201
@@ -174,6 +191,14 @@ pink
 00000
 00000
 
+red
+red
+00000
+00000
+00000
+00000
+00000
+
 =======
 LEGEND
 =======
@@ -191,9 +216,15 @@ s = C_3 and green
 d = C_2 and green
 
 8 = C_1 and pink
-6 = C_2 and pink
-2 = C_3 and pink
 4 = C_4 and pink
+2 = C_3 and pink
+6 = C_2 and pink
+
+( unused )
+j = C_1 and red
+h = C_4 and red
+k = C_3 and red
+l = C_2 and red
 
 reddrone = player
 drone = reddrone or greendrone
@@ -201,8 +232,10 @@ drone = reddrone or greendrone
 p = reddrone
 c = pinkdrone
 x = greendrone
+y = dummy (unused )
+z = orangedrone ( unused )
 
-actor = p or c or x
+actor = p or c or x or z or y
 
 n = nullified
 
@@ -224,8 +257,8 @@ $ = B_4 and Background
 R = A_1 or A_2 or A_3 or A_4
 B = B_1 or B_2 or B_3 or B_4
 
-G = green
-K = pink
+& = green
+* = pink
 
 =======
 SOUNDS
@@ -236,7 +269,7 @@ COLLISIONLAYERS
 ================
 
 Background
-green, pink
+green, pink, red
 B_1, B_2, B_3, B_4, mesh
 player, nullified, actor, A_1, A_2, A_3, A_4, Wall, C_1, C_2, C_3, C_4
 
@@ -275,10 +308,10 @@ RULES
 [ > actor | R | no n no I no R no actor ] -> [ > actor | > R | no n no I no R no actor ]
 
 ( actions transfer through arrow blocks to remote actors )
-[ action player | G ] [ greendrone  ]    -> [ action player | G ] [ action greendrone ] again
-[ action player | K ] [ pinkdrone  ]     -> [ action player | K ] [ action pinkdrone ] again
-[ action pinkdrone | G ] [ greendrone ]  -> [ action pinkdrone | G ] [ action greendrone ] again
-[ action greendrone | K ] [ pinkdrone  ] -> [ action greendrone | K ] [ action pinkdrone ] again
+[ action player | & ] [ greendrone  ]    -> [ action player | & ] [ action greendrone ] again
+[ action player | * ] [ pinkdrone  ]     -> [ action player | * ] [ action pinkdrone ] again
+[ action pinkdrone | & ] [ greendrone ]  -> [ action pinkdrone | & ] [ action greendrone ] again
+[ action greendrone | * ] [ pinkdrone  ] -> [ action greendrone | * ] [ action pinkdrone ] again
 
 ( the arrow "absorbs" the action -- this is to stem the infection )
 ( [ action drone ] [ action player ] -> [ action drone ] [ player ] )

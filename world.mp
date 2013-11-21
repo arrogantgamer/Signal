@@ -1,29 +1,6 @@
-( CHRIS: add more of the trapped moving dudes earlier )
-( more of that "Ihoa, Ihere is me?" feeling )
+message [00000.000000] SIGIO
 
-((07:12:40 PM) Erik Madsen: but I think having an unmovable dude sitting right beside a spot where you have to remotely move a block to is a good idea
-(07:12:51 PM) Erik Madsen: makes it so there's another layer of planning on top of "move this block here and then forget about it"
-(07:12:58 PM) Erik Madsen: it just has to be possible to win haha )
-
-
-
-
-
-
-message [00000.000000]
-( so difficult )
-
-nnn8nnnxIn7'"'nn
-4...6nn.......cn
-n2n.nnn.Innnnnnn
-nwn.nnn.Innnnn#n
-ap..dnc........n
-n3nsnnnnInnnnI.I
-n.939.......nnxn
-nnnnn!n$n!n$nnnn ( much easier with red (still takes a long time ) )
-
-
-message [63900.718172] SIGPIR
+message [00000.178291] SIGPWR
 
 ( 0 igtro )
 nnnnnnnncnnnnnwn
@@ -35,7 +12,7 @@ nn2nn..1.....ncn
 cnnn....nn..nxnn
 nnnnnnnnncnnnnnn
 
-message [63900.719299] SIGURG
+message [00000.289387] SIGURG
 
 ( 1 blocks go og correspognigg nots )
 ncnnnnnnnn.xInxn
@@ -46,8 +23,9 @@ nwn.....n...In8n
 apdnxnnnxnnnI4n6
 nsncnn8nnxcnIn2n
 nnx..nn6n.nnInnn
+nn.nnnnnnnnnnnnn
 
-message [63900.751983] SIGSYS
+message [00000.384732] SIGSYS
 
 ( 2 similar blocks move together )
 n.nxnnnIInnnnx.n
@@ -59,7 +37,7 @@ nn4p6nnIInnnacdn
 8nn2nnnIInxnnsnn
 n6nnn.xIIc..nnxn
 
-message [63900.838929] SIGALRM
+message [00000.424782] SIGALRM
 
 ( a similar level, demonstrating that blocks of the same symbol move together )
 ..cnnnnnnnnxnnwn
@@ -71,7 +49,7 @@ n2nn.7..#....n.n
 nnn....!..3.nn.n
 ncnnnnnnnnnncnxn
 
-message [63900.873838] SIGSTOP
+message [00000.572993] SIGSTOP
 
 ( 4 trivial rotate puzzle )
 
@@ -79,12 +57,12 @@ ncnnxnnnnnnxnnwn
 nnwnnnx..nnnnand
 napdnn.1...nnnsn
 nnsnnn.....n.xnn
-..nnc.n..$.nnnn.
-....n.nn..nncnn.
-.c..nxnnnnnnnn..
-.....n8ncx..n..c
+n.nnc.n..$.nnn.n
+n...n.nn..nncncn
+n.c.nxnnnnnnnn.n
+nnnnnn8ncx..nnnn
 
-message [63900.939021] SIGILL
+message [00000.689290] SIGCONT
 
 ( 3 trivial similar blocks puzzle )
 n2nxnInncnnInnan
@@ -96,7 +74,7 @@ nn.7...#...I...n
 8nnx.Innnn.m...n
 n6nnnInnxnnInnnx
 
-message [63900.999202] SIGBUS
+message [00000.727183] SIGBUS
 
 ( 5 impossible similar blocks puzzle )
 ( press 'x' to rotate blocks )
@@ -109,7 +87,7 @@ nwnnnnnnnnn....n
 acdnc.nx..n...nn
 nsnn.nnnnnnnnnnn
 
-message [63901.009403] SIGSEGV
+message [00000.851829] SIGSEGV
 
 ( 6 simple rotate puzzle -- pull )
 nnnnnnnnnInnnwnn
@@ -121,7 +99,7 @@ cnnn...nnI..nn8n
 nacnnnnncInxn4p6
 nnsnnc..nInnnn2n
 
-message [63901.029298] SIGSTKFLT
+message [00000.941982] SIGSTKFLT
 
 ( 7 mesh puzzle -- push )
 ( introduces complex puzzles )
@@ -134,7 +112,7 @@ nn8nnxn.n.xnI..n
 n6p4n.nnnnnnInnn
 nn2nn.ncn8nxIc..
 
-message [63901.349325] SIGIO
+message [00001.007939] SIGFPE
 
 ( introduces controls )
 c.nc8nnnnxnnInn.
@@ -146,7 +124,7 @@ ncnnnnnnnnnnnwnn
 nn@..1c3..!napdn
 cnnnnnnnnnncnsnx
 
-message [63901.337213] SIGTRAP
+message [00001.179893] SIGTRAP
 ( no direct rotation )
 ( player issolated )
 
@@ -159,7 +137,7 @@ nnnncnnnnnn....n
 nx..nnxn3.....1n
 nnnncxnnnnnnnnnc
 
-message [63901.343177] SIGLOST
+message [00001.209376] SIGLOST
 ( pull a block out for a drone to reprogram )
 ( perfect sequel to SIGTRAP )
 ( player issolated + drone control )
@@ -173,7 +151,7 @@ n3$#.nInncn..1.n
 nn9.ncInnnnnx.nn
 xnnnxcIn..xnnnxx
 
-message [00000.000000]
+message [00001.398411] SIGILL
 ( player plays no role )
 ( drone control only )
 
@@ -186,7 +164,7 @@ n.......#$n2nncn
 cnn.....@!nnnn1n
 x..nnnnnnn...xnn
 
-message [00000.000000] SIGQUIT
+message [00001.425172] SIGQUIT
 ( interference remote dude )
 ( takes a _long_ time and uses both remote and jama )
 
@@ -199,7 +177,7 @@ n$nxnInnnsncnn6n
 xnnnnInndcwnn2p4
 n..xnIc.nanncn8n
 
-message [63901.283712] SIGINT
+message [00001.529873] SIGINT
 ( messes with controls: frustrating )
 
 nncnnxInnnnnxn2n
@@ -211,7 +189,7 @@ xn..1nm...nnap.d
 n.n.xnIc.nnnnnsn
 .xcnnxInncx..nnx
 
-message [63901.328827] SIGCHLD
+message [00001.662781] SIGCHLD
 ( further mess with controls )
 ( second pink dude exists )
 ( so good! )
@@ -226,12 +204,37 @@ nxnc...m..3@.nxn
 nxnn!..Ixn1na.cd
 ..cnnnnInnnnnnsn
 
-message [00000.000000]
+message [00001.715923] SIGKILL
+( so difficult )
+
+nnn8nInxIn7'"'nn
+4...6In.......cn
+n2n.nIn.Innnnnnn
+nwn.nIn.Innnnn#n
+ap..dIc........n
+n3nsnInnInnnnI.I
+n.939........nxn
+nnnnnI!n$n!n$nnn
+
+message [00001.859301] SIGLAST
 ( red is the player now! )
 
+nnncnnnnnxnnnnnn
+nxnnnxnccnn#.3cn
+n.3nn7nnxnnnnnnn
+n$ncnncnnnnxnnnn
+nnxn....nnIIwasd
+xn......xnmnnnnn
+nn.!@..ncnmnpn.n
+n.....nnnnn98426
+n.......nnnnnnnn
+n.........nnnnnn
+nn.......nnnnnnn
+IIIImmmmIIIIIIII
+n..........nnjnn
+nn.........nhzln
+nnn.......nnnknn
+nnnnnnnnnnnnnnnn
 
-message [00000.000000]
-( zoom out to expose red control blocks? )
-
-message [63901.370827] SIGKILL
+message [00002.000000] SIGHUP
 
