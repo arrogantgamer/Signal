@@ -1,4 +1,3 @@
-
 ( CHRIS: add more of the trapped moving dudes earlier )
 ( more of that "Ihoa, Ihere is me?" feeling )
 
@@ -6,6 +5,43 @@
 (07:12:51 PM) Erik Madsen: makes it so there's another layer of planning on top of "move this block here and then forget about it"
 (07:12:58 PM) Erik Madsen: it just has to be possible to win haha )
 
+message [63901.283712] SIGINT
+( messes with controls: frustrating )
+
+nncnnxInnnnnxn2n
+n.n.nnIn...nnc..
+n.....mn...n.xnn
+n.79..m.#$.n.nnc
+nn@3..m..!nnnwnn
+xn..1nm...nnap.d
+n.n.xnIc.nnnnnsn
+.xcnnxInncx..nnx
+
+message [63901.328827] SIGCHLD
+( further mess with controls )
+( second pink dude exists )
+( so good! )
+
+n8nnnnncnInnnnxc
+4p.6n..nI.#$.nnn
+nn2n....I....nx.
+6nn.7.9.m....cnn
+nnn.@3..m...nn4n
+xwnn....I....nn2
+ac.dn1nxI..!nnxn
+nnsnnnnnnnnnnc..
+
+message [00000.000000]
+( so difficult )
+
+nnn8nnnxIn7'"'nn
+4...6nn.......cn
+n2n.nnn.Innnnnnn
+nwn.nnn.Innnnn#n
+ap..dnc........n
+n3nsnnnnInnnnI.I
+n.939.......nnxn
+nnnnn!n$n!n$nnnn
 
 
 message [63900.718172] SIGPIR
@@ -184,43 +220,7 @@ n$nxnInnnsncnn6n
 xnnnnInndcwnn2p4
 n..xnIc.nanncn8n
 
-message [63901.283712] SIGINT
-( messes with controls: frustrating )
 
-nncnnxInnnnnxn2n
-n.n.nnIn...nnc..
-n.....mn...n.xnn
-n.79..m.#$.n.nnc
-nn@3..m..!nnnwnn
-xn..1nm...nnap.d
-n.n.xnIc.nnnnnsn
-.xcnnxInncx..nnx
-
-message [63901.328827] SIGCHLD
-( further mess with controls )
-( second pink dude exists )
-( so good! )
-
-n8nnnnncnInnnnxc
-4p.6n..nI.#$.nnn
-nn2n....I....nx.
-6nn.7.9.m....cnn
-nnn.@3..m...nn4n
-xwnn....I....nn2
-ac.dn1nxI..!nnxn
-nnsnnnnnnnnnnc..
-
-message [00000.000000]
-( so difficult )
-
-nnn8nnnxIn7'"'nn
-4...6nn.......cn
-n2n.nnn.Innnnnnn
-nwn.nnn.Innnnn#n
-ap..dnc........n
-n3nsnnnnInnnnI.I
-n.939.......nnxn
-nnnnn!n$n!n$nnnn
 
 message [00000.000000]
 ( red is the player now! )

@@ -275,10 +275,13 @@ RULES
 [ > actor | R | no n no I no R no actor ] -> [ > actor | > R | no n no I no R no actor ]
 
 ( actions transfer through arrow blocks to remote actors )
-[ action player | G ] [ greendrone  ] -> [ action player | G ] [ action greendrone ] again
-[ action player | K ] [ pinkdrone  ] -> [ action player | K ] [ action pinkdrone ] again
-[ action pinkdrone | G ] [ greendrone ] -> [ action pinkdrone | G ] [ action greendrone ] again
+[ action player | G ] [ greendrone  ]    -> [ action player | G ] [ action greendrone ] again
+[ action player | K ] [ pinkdrone  ]     -> [ action player | K ] [ action pinkdrone ] again
+[ action pinkdrone | G ] [ greendrone ]  -> [ action pinkdrone | G ] [ action greendrone ] again
 [ action greendrone | K ] [ pinkdrone  ] -> [ action greendrone | K ] [ action pinkdrone ] again
+
+( the arrow "absorbs" the action -- this is to stem the infection )
+( [ action drone ] [ action player ] -> [ action drone ] [ player ] )
 
 ( mark squares as "wanting to rotate" )
 [ action actor | A_1 ] -> [ action actor | action A_1 ]
@@ -298,8 +301,14 @@ RULES
 [ > A_2 ] [ A_2 ] -> [ > A_2 ] [ > A_2 ]
 [ > A_3 ] [ A_3 ] -> [ > A_3 ] [ > A_3 ]
 
+
+( possible justifications for red's imprisonment )
+
+( red travels )
+( [ > player | nullified ] -> [ nullified | player ] )
+
 ( red infects )
-[ action player | nullified ] -> [ action player | player ]
+( [ action player | nullified ] -> [ player | player ] )
 
 ==============
 WINCONDITIONS
