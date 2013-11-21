@@ -305,7 +305,7 @@ RULES
 ( possible justifications for red's imprisonment )
 
 ( red travels )
-( [ > player | nullified ] -> [ nullified | player ] )
+[ > player | nullified ] -> [ nullified | player ]
 
 ( red infects )
 ( [ action player | nullified ] -> [ player | player ] )
