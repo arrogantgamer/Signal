@@ -219,7 +219,7 @@ $ = B_4 and Background
 ` = A_1 and B_1
 ' = A_2 and B_2
 " = A_3 and B_3
-, = A_1 and B_4
+, = A_4 and B_4
 
 R = A_1 or A_2 or A_3 or A_4
 B = B_1 or B_2 or B_3 or B_4
@@ -272,7 +272,7 @@ RULES
 [ > actor | mesh ] -> [ actor | mesh ]
 
 ( R arrows are pushable, but not when they are against walls )
-[ > actor | R | no n no I no R ] -> [ > actor | > R | no n no I no R ]
+[ > actor | R | no n no I no R no actor ] -> [ > actor | > R | no n no I no R no actor ]
 
 ( actions transfer through arrow blocks to remote actors )
 [ action player | G ] [ greendrone  ] -> [ action player | G ] [ action greendrone ] again
@@ -297,6 +297,9 @@ RULES
 [ > A_1 ] [ A_1 ] -> [ > A_1 ] [ > A_1 ]
 [ > A_2 ] [ A_2 ] -> [ > A_2 ] [ > A_2 ]
 [ > A_3 ] [ A_3 ] -> [ > A_3 ] [ > A_3 ]
+
+( red infects )
+[ action player | nullified ] -> [ action player | player ]
 
 ==============
 WINCONDITIONS
