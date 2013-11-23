@@ -1,8 +1,8 @@
 message [00000.000000] SIGIO
 
 message [00000.178291] SIGPWR
+( intro )
 
-( 0 igtro )
 nnnnnnnncnnnnnwn
 n..xncnnnxnnnacd
 nnnnnnnnnnnnnnsn
@@ -13,8 +13,8 @@ cnnn....nn..nxnn
 nnnnnnnnncnnnnnn
 
 message [00000.289387] SIGURG
+( match blocks to corresponding dots )
 
-( 1 blocks go og correspognigg nots )
 ncnnnnnnnn.xInxn
 nn.......nnnI.nn
 n.7..#.....nm..n
@@ -26,8 +26,8 @@ nnx..nn6n.nnInnn
 nn.nnnnnnnnnnnnn
 
 message [00000.384732] SIGSYS
+( similar blocks move together )
 
-( 2 similar blocks move together )
 n.nxnnnIInnnnx.n
 .cnn...II...nncn
 6nn...7....#.nnn
@@ -38,8 +38,9 @@ nn4p6nnIInnnacdn
 n6nnn.xIIc..nnxn
 
 message [00000.424782] SIGALRM
+( similar blocks move together )
+( reinforced with the barrier )
 
-( a similar level, demonstrating that blocks of the same symbol move together )
 ..cnnnnnnnnxnnwn
 nnn.......nnnacd
 cnx..7..#...nnsn
@@ -50,21 +51,22 @@ nnn....!..3.nn.n
 ncnnnnnnnnnncnxn
 
 message [00000.572993] SIGSTOP
+( trivial rotate puzzle )
+( impossible using what we've seen so far )
 
-( 4 trivial rotate puzzle )
-
-ncnnxnnnnnnxnnwn
-nnwnnnx..nnnnand
-napdnn.1...nnnsn
-nnsnnn.....n.xnn
-n.nnc.n..$.nnn.n
-n...n.nn..nncncn
-n.c.nxnnnnnnnn.n
-nnnnnn8ncx..nnnn
+ncnnIxnnnnnxnn8n
+nnwnInx..nnnn4x6
+napdIn.1...nnn2n
+nnsnIn.....n.xnn
+n.nnInnn.$.nnn.n
+n...m..nn.nncncn
+n.c.mx..nnnnnn.n
+nnnnInnncx..nnnn
 
 message [00000.689290] SIGCONT
+( trivial with block rotation )
+( solvable without )
 
-( 3 trivial similar blocks puzzle )
 n2nxnInncnnInnan
 8p4nnInnnnnIndcs
 n6n..InnnnnI.nwn
@@ -75,9 +77,9 @@ nn.7...#...I...n
 n6nnnInnxnnInnnx
 
 message [00000.727183] SIGBUS
+( trivial with block rotation )
+( impossible without )
 
-( 5 impossible similar blocks puzzle )
-( press 'x' to rotate blocks )
 xnnnnnnnnnnxnn8n
 nn......nncnn4p6
 n.7...#.nnnxnn2n
@@ -88,8 +90,8 @@ acdnc.nx..n...nn
 nsnn.nnnnnnnnnnn
 
 message [00000.851829] SIGSEGV
+( pull -- use similar blocks to pull hard to reach ones )
 
-( 6 simple rotate puzzle -- pull )
 nnnnnnnnnInnnwnn
 .n.n3nn..m.nncdn
 .cn..n.@.m..cnnn
@@ -100,9 +102,9 @@ nacnnnnncInxn4p6
 nnsnnc..nInnnn2n
 
 message [00000.941982] SIGSTKFLT
+( the first real puzzle )
+( send a block across mesh )
 
-( 7 mesh puzzle -- push )
-( introduces complex puzzles )
 nnwncnnnnnncInnn
 ndcnnn....nnI..n
 .nncan.3...nI..n
@@ -113,8 +115,8 @@ n6p4n.nnnnnnInnn
 nn2nn.ncn8nxIc..
 
 message [00001.007939] SIGFPE
+( introduces drone control )
 
-( introduces controls )
 c.nc8nnnnxnnInn.
 n.n4........m1nc
 nnnI....!...Innn
@@ -125,8 +127,7 @@ nn@..1c3..!napdn
 cnnnnnnnnnncnsnx
 
 message [00001.179893] SIGTRAP
-( no direct rotation )
-( player issolated )
+( the player has no access to blocks and cannot rotate them )
 
 nn.n2nnnnnxnnnnc
 cn.nnnn..n.n7.9n
@@ -138,9 +139,8 @@ nx..nnxn3.....1n
 nnnncxnnnnnnnnnc
 
 message [00001.209376] SIGLOST
-( pull a block out for a drone to reprogram )
-( perfect sequel to SIGTRAP )
-( player issolated + drone control )
+( the player has no access to blocks, but a drone does )
+( impossible without drone control )
 
 n..xnnIn.nwncn8n
 cnnncxI.xapdn4.6
@@ -151,42 +151,44 @@ n3$#.nInncn..1.n
 nn9.ncInnnnnx.nn
 xnnnxcIn..xnnnxx
 
-message [00001.398411] SIGILL
-( player plays no role )
-( drone control only )
-
-nnnnnnnncnnwncnn
-n3c3!.!n.napdn@n
-nnnnnnnn.nnsnn.n
-n31....nnxn8nn@n
-n97......n4x6n1n
-n.......#$n2nncn
-cnn.....@!nnnn1n
-x..nnnnnnn...xnn
-
 message [00001.425172] SIGQUIT
-( interference remote dude )
-( takes a _long_ time and uses both remote and jama )
+( introduces interference )
+( if the player insists that "they are green" this will be quite difficult )
+( if they are able to "switch" it will be easier )
 
 cnnnnInnn.x.nnnx
 n....I..nncn.ncn
-n.79.m.#.nnn.9.n
-n.13.m.@!nn....n
+I9...m...nnn.9.n
+I3...m..!nn....n
 n....I..nnxnn$nn
 n$nxnInnnsncnn6n
 xnnnnInndcwnn2p4
 n..xnIc.nanncn8n
 
+message [00001.398411] SIGILL
+( there does not appear to be a green drone )
+( the player's identity is called to attention )
+
+nwnnnnnnnnnnnncn
+apdn3c3!.!n@nn.n
+nsnnnnnnnnn.nn.n
+nnnn31....n@nn.n
+..xn97....n1nnnn
+nnnn....#$ncnn8n
+nc.n....@!n1n4x6
+nn.nnnnnnnnnnn2n
+
 message [00001.529873] SIGINT
-( messes with controls: frustrating )
+( get the player used to movement with broken controls )
+( the red dude is free, and can help the player )
 
 nncnnxInnnnnxn2n
 n.n.nnIn...nnc..
 n.....mn...n.xnn
-n.79..m.#$.n.nnc
+n.7...m.#..n.nnc
 nn@3..m..!nnnwnn
 xn..1nm...nnap.d
-n.n.xnIc.nnnnnsn
+n.n.xnInnnnnnnsn
 .xcnnxInncx..nnx
 
 message [00001.662781] SIGCHLD
@@ -196,25 +198,27 @@ message [00001.662781] SIGCHLD
 ( red has gradually more freedom )
 
 c8nnnnnIcnnncnnx
-4p.6n$#In..n..nn
+4p.6n..In..n..nn
 nn2n...I....nnnn
-n.n....m.9.7.ncn
-nxnc...m..3@.nxn
-2nn....I....nwnn
-nxnn!..Ixn1na.cd
+cxn#...m.9...ncn
+nnnc...m...@.nxn
+..n....I....nwnn
+nxnn...Ixn1na.cd
 ..cnnnnInnnnnnsn
 
 message [00001.715923] SIGKILL
-( so difficult )
+( a challenging "last boss" in which the player is
+clearly the red drone )
+( if the red drone "escapes", this level is easier )
 
-nnn8nInxIn7'"'nn
+nnn8nInxIn7'"nnn
 4...6In.......cn
 n2n.nIn.Innnnnnn
 nwn.nIn.Innnnn#n
 ap..dIc........n
 n3nsnInnInnnnI.I
-n.939........nxn
-nnnnnI!n$n!n$nnn
+n.93.......nnnxn
+nnnnnI!n$n!nnnnn
 
 message [00001.859301] SIGLAST
 ( red is the player now! )
@@ -235,6 +239,7 @@ n..........nnjnn
 nn.........nhzln
 nnn.......nnnknn
 nnnnnnnnnnnnnnnn
+
 
 message [00002.000000] SIGHUP
 
