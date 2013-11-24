@@ -151,7 +151,7 @@ n3$#.nInncn..1.n
 nn9.ncInnnnnx.nn
 xnnnxcIn..xnnnxx
 
-message [00001.425172] SIGQUIT
+message [00001.325172] SIGQUIT
 ( introduces interference )
 ( if the player insists that "they are green" this will be quite difficult )
 ( if they are able to "switch" it will be easier )
@@ -165,7 +165,7 @@ n$nxnInnnsncnn6n
 xnnnnInndcwnn2p4
 n..xnIc.nanncn8n
 
-message [00001.398411] SIGILL
+message [00001.498411] SIGILL
 ( there does not appear to be a green drone )
 ( the player's identity is called to attention )
 

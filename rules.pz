@@ -264,6 +264,15 @@ B = B_1 or B_2 or B_3 or B_4
 SOUNDS
 =======
 
+EndGame 96356908
+EndLevel 63661108 
+SFX1 27182706 (rotate)
+SFX2 8646901 (transfer)
+( SFX2 57864308 (transfer: blaster noise ) )
+undo 44778908
+restart 76067108
+actor move 62909707 (drone move)
+
 ================
 COLLISIONLAYERS
 ================
@@ -302,7 +311,7 @@ RULES
 [ > greendrone | 6 ] [ stationary pinkdrone ] -> [ > greendrone | 6 ] [ RIGHT pinkdrone ] again
 
 ( no passing through mesh )
-[ > actor | mesh ] -> [ actor | mesh ]
+[ > actor | mesh ] -> [ actor | mesh ] SFX0
 
 ( R arrows are pushable, but not when they are against walls )
 [ > actor | R | no n no I no R no actor ] -> [ > actor | > R | no n no I no R no actor ]
@@ -323,10 +332,10 @@ RULES
 [ action actor | A_4 ] -> [ action actor | action A_4 ]
 
 ( rotate squares that want to rotate )
-[ action A_4 ] -> [ A_1 ]
-[ action A_1 ] -> [ A_2 ]
-[ action A_2 ] -> [ A_3 ]
-[ action A_3 ] -> [ A_4 ]
+[ action A_4 ] -> [ A_1 ] SFX1
+[ action A_1 ] -> [ A_2 ] SFX1
+[ action A_2 ] -> [ A_3 ] SFX1
+[ action A_3 ] -> [ A_4 ] SFX1
 
 ( when pushing a square, push all similar squares )
 [ > A_4 ] [ A_4 ] -> [ > A_4 ] [ > A_4 ]
@@ -338,7 +347,7 @@ RULES
 ( possible justifications for red's imprisonment )
 
 ( red travels )
-[ > player | nullified ] -> [ nullified | player ]
+[ > player | nullified ] -> [ nullified | player ] SFX2
 
 ( red infects )
 ( [ action player | nullified ] -> [ player | player ] )
