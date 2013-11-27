@@ -1,3 +1,4 @@
+
 message [00000.000000] SIGIO
 
 message [00000.178291] SIGPWR
@@ -16,14 +17,14 @@ message [00000.289387] SIGURG
 ( match blocks to corresponding dots )
 
 ncnnnnnnnn.xInxn
-nn.......nnnI.nn
+n........nnnI.nn
 n.7..#.....nm..n
 n.....!...3.m.xn
-nwn.....n...In8n
-apdnxnnnxnnnI4n6
-nsncnn8nnxcnIn2n
-nnx..nn6n.nnInnn
-nn.nnnnnnnnnnnnn
+nnn.....n...Innn
+nwnnxnnnxnnnIn8n
+apdnnn8nnxcnI4n6
+nsn.xnn6n.nnIn2n
+nnnn..nnnnnnInnn
 
 message [00000.384732] SIGSYS
 ( similar blocks move together )
@@ -31,11 +32,11 @@ message [00000.384732] SIGSYS
 n.nxnnnIInnnnx.n
 .cnn...II...nncn
 6nn...7....#.nnn
-nnx...7....#..nx
-.xn8n..II.n..wnn
-nn4p6nnIInnnacdn
-8nn2nnnIInxnnsnn
-n6nnn.xIIc..nnxn
+nnx...7....#.nnx
+.xnnn..II.n.nwnn
+nnn8nnnIInnnacdn
+8n4p6nnIInxnnsnn
+n6n2n.xIIc..nnxn
 
 message [00000.424782] SIGALRM
 ( similar blocks move together )
@@ -117,11 +118,11 @@ nn2nn.ncn8nxIc..
 message [00001.007939] SIGFPE
 ( introduces drone control )
 
-c.nc8nnnnxnnInn.
+c.nn8nnnnxnnInn.
 n.n4........m1nc
 nnnI....!...Innn
 .n3m...#....6nxc
-xxnI......n2nn..
+x.nI......n2nn..
 ncnnnnnnnnnnnwnn
 nn@..1c3..!napdn
 cnnnnnnnnnncnsnx
@@ -130,10 +131,10 @@ message [00001.179893] SIGTRAP
 ( the player has no access to blocks and cannot rotate them )
 
 nn.n2nnnnnxnnnnc
-cn.nnnn..n.n7.9n
-xnxwnx....n....n
-ncapdn..1.n.#$.n
-..xsnnn.@nn.@!.n
+cnxnnnn..n.n7.9n
+xnnwnx....n....n
+nnapdn..1.n.#$.n
+.xnsnnn.@nn.@!.n
 nnnncnnnnnn....n
 nx..nnxn3.....1n
 nnnncxnnnnnnnnnc
@@ -142,8 +143,8 @@ message [00001.209376] SIGLOST
 ( the player has no access to blocks, but a drone does )
 ( impossible without drone control )
 
-n..xnnIn.nwncn8n
-cnnncxI.xapdn4.6
+n..xnnIx.nwncn8n
+cnnncxI.napdn4.6
 nn9.nnInnnsnnn.n
 n7....m...nn...n
 n.!@..m...n.@..n
@@ -182,7 +183,7 @@ message [00001.529873] SIGINT
 ( get the player used to movement with broken controls )
 ( the red dude is free, and can help the player )
 
-nncnnxInnnnnxn2n
+nncnnxInnnnnxnnn
 n.n.nnIn...nnc..
 n.....mn...n.xnn
 n.7...m.#..n.nnc
@@ -240,6 +241,10 @@ nn.........nhzln
 nnn.......nnnknn
 nnnnnnnnnnnnnnnn
 
-
 message [00002.000000] SIGHUP
+
+message shouts
+message @draknek & @clangmuir, for indispensable design guidance
+message @droqen & @terrycavanagh, for inspiration
+message @increpare, for puzzlescript
 
