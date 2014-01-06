@@ -246,5 +246,6 @@ message [00002.000000] SIGHUP
 message shouts
 message @draknek & @clangmuir, for indispensable design guidance
 message @droqen & @terrycavanagh, for inspiration
+message @galenelfert, for sound design
 message @increpare, for puzzlescript
 
